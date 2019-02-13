@@ -2,7 +2,7 @@
 cat>./index.html<<-\EOF
 <title>Monlor Files文件列表</title>
 <style>
-a {display: block;}
+a {display: block;margin: 10px;}
 a:link{text-decoration: none; color:blue; font-size: 18px; font-family: 微软雅黑;}
 a:visited{ color:green;}
 a:hover{text-decoration: underline; color:#09f; font-size: 19px;}

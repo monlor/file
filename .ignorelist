@@ -1,5 +1,5 @@
 .git
 .ignorelist
-push.command
+push.sh
 packhtml.sh
 index.html
