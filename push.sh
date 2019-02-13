@@ -1,13 +1,12 @@
 #!/bin/bash
 # ./push.command这类形式，用第二种方法获取，想怎么运行都行
 GitUrl="https://git.dev.tencent.com/monlor"
-if [ -z "`echo $0 | grep "^\.\/[^/]*$"`" ]; then
-	ProjectPath="$(echo $0 | sed -e "s|/[^/]*$||")"
-	ProjectName="$(echo $ProjectPath | sed -e "s|[/]*.*/||")"
-else
-	ProjectPath="$(pwd)"
-	ProjectName="$(echo $ProjectPath | sed -e "s|/.*/||")"
-fi
+
+ProjectPath="$(pwd)"
+ProjectName="$(echo $ProjectPath | sed -e "s|/.*/||")"
+
+echo $ProjectPath,$ProjectName
+
 
 [ -z "$ProjectName" ] && echo "Null Project Name!" && exit
 echo "Push [$ProjectName] To [$GitUrl/$ProjectName.git]."
