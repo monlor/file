@@ -4,6 +4,7 @@ GitUrl="https://git.dev.tencent.com/monlor"
 ProjectPath="$(pwd)"
 ProjectName="$(echo $ProjectPath | sed -e "s|/.*/||")"
 #打包html列表
+echo "Add files to html list..."
 ./packhtml.sh
 
 [ -z "$ProjectName" ] && echo "Null Project Name!" && exit
