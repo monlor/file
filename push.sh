@@ -1,17 +1,15 @@
 #!/bin/bash
-GitUrl1="https://git.dev.tencent.com/monlor"
-GitUrl2="https://github.com/monlor"
-
+GitUrls=("https://git.dev.tencent.com/monlor"
+	"https://github.com/monlor")
+# Get Project Info
 ProjectPath="$(pwd)"
 ProjectName="$(echo $ProjectPath | sed -e "s|/.*/||")"
-#打包html列表
-echo "Add files to html list..."
-./packhtml.sh
-
+# clean useless files
 find . -name '.DS_Store' | xargs rm -rf
+# git add
 git add .
 git commit -m "`date +%Y-%m-%d`"
-
+# push func
 function push() {
 	GitUrl="$1"
 	[ -z "$ProjectName" ] && echo "Null Project Name!" && exit
@@ -20,8 +18,10 @@ function push() {
 	git remote add origin "$GitUrl"/"$ProjectName".git
 	git push -u origin master -f
 }
-push $GitUrl1
-push $GitUrl2
-
+# push begin
+for url in ${GitUrls[*]}; do
+	push $url
+done
+# Exit prompt
 echo "Exec finish, Ctrl+C to exit!"
 sleep 1000
