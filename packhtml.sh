@@ -1,3 +1,5 @@
+#!/bin/sh
+cat>./index.html<<-\EOF
 <title>Monlor Files文件列表</title>
 <style>
 a {display: block;}
@@ -7,5 +9,8 @@ a:hover{text-decoration: underline; color:#09f; font-size: 19px;}
 a:active{text-decoration: blink; color: yellow;}
 </style>
 <h2>Monlor Files文件列表</h2>
-<a href="./frpc_dongya.zip">./frpc_dongya.zip</a>
-<a href="./oracle/ojdbc6.jar">./oracle/ojdbc6.jar</a>
+EOF
+reg="$(cat .ignorelist | tr '\n' '|' | sed -e 's/|$//')"
+find . -type f | grep -Ev "${reg}" |  while read file; do
+	echo "<a href=\"$file\">$file</a>" >> index.html	
+done

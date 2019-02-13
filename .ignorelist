@@ -1,0 +1,5 @@
+.git
+.ignorelist
+push.command
+packhtml.sh
+index.html
