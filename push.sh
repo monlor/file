@@ -17,4 +17,5 @@ git commit -m "`date +%Y-%m-%d`"
 git remote rm origin
 git remote add origin "$GitUrl"/"$ProjectName".git
 git push -u origin master -f
-sleep 20
+echo "脚本执行完成，Ctrl+C 退出"
+sleep 1000
