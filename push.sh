@@ -1,9 +1,10 @@
 #!/bin/bash
-# ./push.command这类形式，用第二种方法获取，想怎么运行都行
 GitUrl="https://git.dev.tencent.com/monlor"
 
 ProjectPath="$(pwd)"
 ProjectName="$(echo $ProjectPath | sed -e "s|/.*/||")"
+#打包html列表
+./packhtml.sh
 
 [ -z "$ProjectName" ] && echo "Null Project Name!" && exit
 echo "Push [$ProjectName] To [$GitUrl/$ProjectName.git]."
