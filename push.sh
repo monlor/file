@@ -14,5 +14,5 @@ git commit -m "`date +%Y-%m-%d`"
 git remote rm origin
 git remote add origin "$GitUrl"/"$ProjectName".git
 git push -u origin master -f
-echo "Exec finish，Ctrl+C to exit!"
+echo "Exec finish, Ctrl+C to exit!"
 sleep 1000
