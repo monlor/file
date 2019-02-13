@@ -24,4 +24,4 @@ for url in ${GitUrls[*]}; do
 done
 # Exit prompt
 echo "Exec finish, Ctrl+C to exit!"
-sleep 1000
+sleep 
