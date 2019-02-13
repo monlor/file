@@ -17,7 +17,6 @@ function push() {
 	[ -z "$ProjectName" ] && echo "Null Project Name!" && exit
 	echo "Push [$ProjectName] To [$GitUrl/$ProjectName.git]."
 	git remote rm origin
-	sleep 1
 	git remote add origin "$GitUrl"/"$ProjectName".git
 	git push -u origin master -f
 }
