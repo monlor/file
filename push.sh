@@ -5,9 +5,6 @@ GitUrl="https://git.dev.tencent.com/monlor"
 ProjectPath="$(pwd)"
 ProjectName="$(echo $ProjectPath | sed -e "s|/.*/||")"
 
-echo $ProjectPath,$ProjectName
-
-
 [ -z "$ProjectName" ] && echo "Null Project Name!" && exit
 echo "Push [$ProjectName] To [$GitUrl/$ProjectName.git]."
 cd "$ProjectPath"
@@ -17,5 +14,5 @@ git commit -m "`date +%Y-%m-%d`"
 git remote rm origin
 git remote add origin "$GitUrl"/"$ProjectName".git
 git push -u origin master -f
-echo "脚本执行完成，Ctrl+C 退出"
+echo "Exec finish，Ctrl+C to exit!"
 sleep 1000
