@@ -1,8 +1,6 @@
-language: go
-
 before_script:
   # Coding Pages
-  - git push --quiet "https://${CO_USER}:${CO_TOKEN}@${CO_REF}" master:master --tags
+  - git push "https://${CO_USER}:${CO_TOKEN}@${CO_REF}" master:master --tags
 
 branches:
   only:
