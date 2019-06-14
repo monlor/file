@@ -1,4 +1,4 @@
-language: html
+language: go
 
 before_script:
   # Coding Pages
