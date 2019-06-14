@@ -1,3 +1,5 @@
+language: false
+
 after_script:
   # Coding Pages
   - git push --quiet "https://${CO_USER}:${CO_TOKEN}@${CO_REF}" master:master --tags
