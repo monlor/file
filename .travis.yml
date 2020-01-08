@@ -1,4 +1,5 @@
 script:
+  - chmod +x ./gen_file_list.sh && ./gen_file_list.sh
   - git config user.name "${GIT_USER_NAME}"
   - git config user.email "${GIT_USER_EMAIL"
   - git add .
