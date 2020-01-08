@@ -3,7 +3,6 @@ script:
   - git checkout master
   - chmod +x ./gen_file_list.sh 
   - ./gen_file_list.sh
-  - cat index.html
   - git config user.name "${GIT_USER_NAME}"
   - git config user.email "${GIT_USER_EMAIL}"
   - git commit -a -m "Update File List By TravisCI With Build $TRAVIS_BUILD_NUMBER" || return 0
