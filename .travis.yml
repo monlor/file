@@ -1,6 +1,10 @@
 script:
-  # Coding Pages
-  - git push "https://${CO_USER}:${CO_TOKEN}@${CO_REF}" master:master --tags
+  - git config user.name "${GIT_USER_NAME}"
+  - git config user.email "${GIT_USER_EMAIL"
+  - git add .
+  - git commit -m "Update File List By TravisCI With Build $TRAVIS_BUILD_NUMBER"
+  - git push -q -f "https://${CO_USER}:${CO_TOKEN}@${CO_REF}" master:master --tags
+  - git push -q -f "https://${CI_TOKEN}@${GH_REF}" master:master --tags
 
 branches:
   only:
@@ -10,3 +14,4 @@ env:
  global:
    # Coding Pages
    - CO_REF: git.dev.tencent.com/monlor/file.git
+   - GH_REF: github.com/monlor/file.git
