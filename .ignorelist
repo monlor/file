@@ -4,3 +4,5 @@ push.sh
 gen_file_list.sh
 index.html
 CNAME
+.travis.yml
+README.md
