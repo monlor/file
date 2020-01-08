@@ -1,6 +1,6 @@
 .git
 .ignorelist
 push.sh
-packhtml.sh
+gen_file_list.sh
 index.html
 CNAME
