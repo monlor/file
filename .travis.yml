@@ -4,12 +4,13 @@ script:
 after_script:
   - chmod +x ./gen_file_list.sh 
   - ./gen_file_list.sh
+  - cat index.html
   - git config user.name "${GIT_USER_NAME}"
   - git config user.email "${GIT_USER_EMAIL}"
   - git add .
   - git commit -m "Update File List By TravisCI With Build $TRAVIS_BUILD_NUMBER"
-  - git push "https://${CO_USER}:${CO_TOKEN}@${CO_REF}" master:master --tags
-  - git push "https://${CI_TOKEN}@${GH_REF}" master:master --tags
+  - git push "https://${CO_USER}:${CO_TOKEN}@${CO_REF}" master
+  - git push "https://${CI_TOKEN}@${GH_REF}" master
 
 branches:
   only:
