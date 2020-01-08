@@ -1,4 +1,4 @@
-before_script:
+script:
   # Coding Pages
   - git push "https://${CO_USER}:${CO_TOKEN}@${CO_REF}" master:master --tags
 
