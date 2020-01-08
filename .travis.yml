@@ -1,15 +1,14 @@
 before_script:
   - chmod +x ./gen_file_list.sh 
   - ./gen_file_list.sh
-  - git status
 
 script:
   - git config user.name "${GIT_USER_NAME}"
   - git config user.email "${GIT_USER_EMAIL}"
   - git add .
   - git commit -m "Update File List By TravisCI With Build $TRAVIS_BUILD_NUMBER"
-  - git push -q -f "https://${CO_USER}:${CO_TOKEN}@${CO_REF}" master:master --tags
-  - git push -q -f "https://${CI_TOKEN}@${GH_REF}" master:master --tags
+  - git push "https://${CO_USER}:${CO_TOKEN}@${CO_REF}" master:master --tags
+  - git push "https://${CI_TOKEN}@${GH_REF}" master:master --tags
 
 branches:
   only:
