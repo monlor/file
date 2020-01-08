@@ -12,6 +12,6 @@ a:active{text-decoration: blink; color: yellow;}
 <h2>Monlor Files文件列表</h2>
 EOF
 reg="$(cat .ignorelist | tr '\n' '|' | sed -e 's/|$//')"
-find . -type f | grep -Ev "${reg}" |  while read file; do
+find . -type f | grep -Ev "${reg}" | sort -r |  while read file; do
 	echo "<a href=\"$file\">$file</a>" >> index.html	
 done
